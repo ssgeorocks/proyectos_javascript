@@ -1,0 +1,83 @@
+/* ---------- Estilos generales ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---------- Encabezado ---------- */
+header {
+  background-color: #2b7a78;
+  color: #ffffff;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ---------- Contenido principal ---------- */
+main {
+  max-width: 900px;
+  margin: 3rem auto;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+  color: #2b7a78;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.about p {
+  margin-bottom: 1rem;
+}
+
+/* ---------- Lista de beneficios ---------- */
+.features ul {
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.features li {
+  background-color: #def2f1;
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.features li:hover {
+  background-color: #cceae8;
+  transform: scale(1.02);
+}
+
+/* ---------- Pie de página ---------- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ddd;
+}
