@@ -16,19 +16,53 @@ body {
 header {
   background-color: #2b7a78;
   color: #ffffff;
-  text-align: center;
-  padding: 2.5rem 1rem;
+  display: flex;                /* activa flexbox */
+  justify-content: space-between; /* separa izquierda y derecha */
+  align-items: center;          /* centra verticalmente */
+  padding: 1.5rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;             /* ya no necesitamos centrar todo */
+  cursor: default;
+  position: relative;
+}
+
+.header-left {
+  flex: 1;                        /* ocupa espacio a la izquierda */
+  text-align: left;
+}
+
+.header-center {
+  flex: 3;                        /* ocupa espacio en el centro */
+  text-align: center;
 }
 
 header h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  margin: 0;
 }
 
 header p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   opacity: 0.9;
+  font-style: italic;
+}
+
+#carrito {
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+#contador {
+  position: absolute;
+  top: -8px;            /* ajusta según tu diseño */
+  right: -8px;
+  background-color: rgb(255, 102, 0);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
 }
 
 /* ---------- Contenido principal ---------- */
@@ -52,14 +86,32 @@ main h2 {
 }
 
 /* ---------- Lista de beneficios ---------- */
+.features{
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  cursor: default;
+}
+
+.features:hover {
+  background-color: #f0fdfa;   /* color de fondo suave */
+  transform: scale(1.01);      /* ligero zoom */
+  cursor: default;
+}
+
 .features ul {
   list-style: none;
   margin-top: 1rem;
   padding-left: 1rem;
+  margin-bottom: 40px;
+  display: none;
+}
+
+.features ul.active {
+  display: block;
 }
 
 .features li {
-  background-color: #def2f1;
   margin: 0.5rem 0;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
@@ -72,12 +124,53 @@ main h2 {
   transform: scale(1.02);
 }
 
+
+/* ---------- Seccion de productos ---------- */
+.products_section{
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 0.5rem;
+  cursor: default;
+}
+
+.products_section:hover {
+  background-color: #f0fdfa;   /* color de fondo suave */
+  transform: scale(1.01);      /* ligero zoom */
+  cursor: default;
+}
+
+
+.products_section ul {
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 40px;
+  display: none;
+}
+
+.products_section ul.active {
+  display: block;
+}
+
+.products_section li {
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.products_section li:hover {
+  background-color: #cceae8;
+  transform: scale(1.02);
+}
+
+
 /* ---------- Pie de página ---------- */
 footer {
   text-align: center;
   padding: 1.5rem;
   font-size: 0.9rem;
-  color: #666;
+  color: #777;
   background-color: #f0f0f0;
   border-top: 1px solid #ddd;
 }

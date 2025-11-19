@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tienda HogarFácil</title>
   <link rel="stylesheet" href="css/style_entrega.css" />
-  <script src="Entrega_1.js" defer></script>
+  <script src="Entrega_2.js" defer></script>
 </head>
 <body>
   <header>
+    <div class="header-left">
     <h1>🛍️ Tienda HogarFácil</h1>
+    </div>
+    <div class="header-center">
     <p>Bienvenido a tu tienda online de productos básicos del hogar</p>
+  </div>
+    <div id="carrito">🛒
+      <span id="contador">0</span>
+    </div>
   </header>
 
   <main>
-    <section class="about">
+    <section id="about" class="about">
       <h2>Sobre nosotros</h2>
       <p>
         En <strong>HogarFácil</strong> encontrarás todo lo que necesitas para tu día a día:
@@ -27,13 +34,22 @@
       </p>
     </section>
 
-    <section class="features">
-      <h2>¿Por qué elegirnos?</h2>
-      <ul>
+    <section id="feature" class="features">
+      <h2 id="toggle-features">¿Por qué elegirnos?</h2>
+      <div>Por favor, hacer click para obtener más información.</div>
+      <ul id="dropdown1">
         <li>🧼 Productos de calidad para tu hogar</li>
         <li>🚚 Entrega rápida y segura</li>
         <li>💳 Pagos fáciles y confiables</li>
         <li>💬 Atención personalizada</li>
+      </ul>
+    </section>
+
+    <section id="products" class="products_section">
+      <h2 id="toggle-products">Nuestros productos</h2>
+      <ul id="products_list">
+        <div>Por favor, seleccione los productos que quiere agregar a su carrito.</div>
+        <!-- Los productos se cargarán aquí mediante JavaScript -->
       </ul>
     </section>
   </main>
