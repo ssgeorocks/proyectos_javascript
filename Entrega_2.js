@@ -58,7 +58,7 @@ let cartProducts = [];
 // Definimos los selectores
 
 const contendorProductos = document.getElementById("products_list")
-const counterCSS = document.getElementById("contador")
+const counterCart = document.getElementById("contador")
 
 // Metodos carrito checkout + logica para agregar variables a local storage
 
@@ -70,7 +70,7 @@ function carritoCheckout(producto){
 
 function updateCounter(){
     let numberProducts = cartProducts.length;
-    counterCSS.textContent = numberProducts;
+    counterCart.textContent = numberProducts;
 };
 
 // Leer desde localStorage
@@ -90,10 +90,9 @@ productosHogar.forEach( (producto) => {
     // Se le da formato al nuevo elemento 
     newProduct.id = `producto-${producto.id}`; 
     newProduct.innerHTML = `
-    
-    <span class="icono">${producto.icono}</span>
-    <strong>${producto.nombre}</strong> - ${producto.descripcion}
-    <em> | $${producto.precio} MXN</em>
+        <span class="icono">${producto.icono}</span>
+        <strong>${producto.nombre}</strong> - ${producto.descripcion}
+        <em> | $${producto.precio} MXN</em>
     `;
     contendorProductos.appendChild(newProduct)
     let productItem = document.getElementById(`producto-${producto.id}`)
