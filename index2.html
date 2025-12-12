@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tienda HogarFácil</title>
   <link rel="stylesheet" href="css/style_entrega.css" />
-  <script src="Entrega_2.js" defer></script>
+  <script src="Entrega_3_ProyectoFinal.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <header>
@@ -13,10 +14,13 @@
     <h1>🛍️ Tienda HogarFácil</h1>
     </div>
     <div class="header-center">
-    <p>Bienvenido a tu tienda online de productos básicos del hogar</p>
+    <p>Tu tienda online de productos básicos para el hogar</p>
   </div>
     <div id="carrito">🛒
       <span id="contador">0</span>
+      <div id="carrito-menu" class="carrito-menu">
+        <button id="carrito-vaciar">Vaciar carrito</button>
+        <button id="carrito-confirmar">Proceder al pago</button>
     </div>
   </header>
 
@@ -27,17 +31,14 @@
         En <strong>HogarFácil</strong> encontrarás todo lo que necesitas para tu día a día:
         alimentos, artículos de limpieza, productos de cuidado personal y mucho más.
       </p>
-      <p>
-        Nuestro objetivo es hacer tus compras más simples, rápidas y cómodas, sin que tengas
-        que salir de casa. Próximamente podrás agregar productos a tu carrito y calcular el total
-        de tu compra directamente desde nuestra plataforma.
-      </p>
     </section>
 
     <section id="feature" class="features">
       <h2 id="toggle-features">¿Por qué elegirnos?</h2>
-      <div>Por favor, hacer click para obtener más información.</div>
+        <div>   Haz click para obtener más información.</div>
       <ul id="dropdown1">
+        <p>Nuestro objetivo es hacer tus compras más simples, rápidas y cómodas, sin que tengas
+        que salir de casa.</p>
         <li>🧼 Productos de calidad para tu hogar</li>
         <li>🚚 Entrega rápida y segura</li>
         <li>💳 Pagos fáciles y confiables</li>
@@ -47,9 +48,9 @@
 
     <section id="products" class="products_section">
       <h2 id="toggle-products">Nuestros productos</h2>
+      <p class="products_hint">Selecciona los productos que quieres agregar a tu carrito.</p>
       <ul id="products_list">
-        <div>Por favor, seleccione los productos que quiere agregar a su carrito.</div>
-        <!-- Los productos se cargarán aquí mediante JavaScript -->
+        
       </ul>
     </section>
   </main>
@@ -57,5 +58,51 @@
   <footer>
     <p>© 2025 HogarFácil - Todos los derechos reservados.</p>
   </footer>
+  <!-- Panel lateral de resumen de compra -->
+  <aside id="cart-panel" class="cart-panel">
+    <div class="cart-panel__header">
+      <h3>Resumen de compra</h3>
+      <button id="cart-panel-close" class="cart-panel__close" aria-label="Cerrar">✕</button>
+    </div>
+    <div id="cart-panel-content" class="cart-panel__content">
+      <!-- Se rellena dinámicamente con los productos del carrito -->
+    </div>
+    <div class="cart-panel__footer">
+      <div class="cart-total">
+        Total: <strong id="cart-total">$0 MXN</strong>
+      </div>
+      <button id="cart-final-confirm" class="btn-confirm">Continuar al pago</button>
+    </div>
+  </aside>
+  <div id="cart-panel-backdrop" class="cart-panel-backdrop"></div>
+  <!-- Panel lateral de Checkout -->
+  <aside id="checkout-panel" class="cart-panel">
+    <div class="cart-panel__header">
+      <h3>Datos de envío</h3>
+      <button id="checkout-panel-close" class="cart-panel__close" aria-label="Cerrar">✕</button>
+    </div>
+    <form id="checkout-form" class="cart-panel__content">
+      <label>
+        Nombre completo
+        <input type="text" id="checkout-name" name="name" placeholder="Nombre" required />
+      </label>
+      <label>
+        Dirección
+        <input type="text" id="checkout-address" name="address" placeholder="Calle, número, colonia" required />
+      </label>
+      <label>
+        Ciudad
+        <input type="text" id="checkout-city" name="city" placeholder="Ciudad" required />
+      </label>
+      <label>
+        Código postal
+        <input type="text" id="checkout-zip" name="zip" placeholder="00000" required />
+      </label>
+    </form>
+    <div class="cart-panel__footer">
+      <button id="checkout-confirm" class="btn-confirm">Confirmar compra</button>
+    </div>
+  </aside>
+
 </body>
 </html>

@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1,
+    "categoria": "Limpieza",
+    "nombre": "Detergente líquido",
+    "descripcion": "Detergente multiusos para ropa y superficies.",
+    "precio": 85,
+    "icono": "🧴",
+    "imagen": "source/imagenes/detergente.png"
+  },
+  {
+    "id": 2,
+    "categoria": "Limpieza",
+    "nombre": "Cloro desinfectante",
+    "descripcion": "Cloro para desinfección de baños y cocina.",
+    "precio": 40,
+    "icono": "🧼",
+    "imagen": "source/imagenes/lejia.png"
+  },
+  {
+    "id": 3,
+    "categoria": "Limpieza",
+    "nombre": "Jabón para trastes",
+    "descripcion": "Jabón líquido concentrado para vajilla.",
+    "precio": 35,
+    "icono": "🍽️",
+    "imagen": "source/imagenes/jabon-trastes.png"
+  },
+  {
+    "id": 4,
+    "categoria": "Alimentos",
+    "nombre": "Arroz blanco",
+    "descripcion": "Arroz de grano largo, ideal para comidas caseras.",
+    "precio": 28,
+    "icono": "🍚",
+    "imagen": "source/imagenes/arroz-blanco.png"
+  },
+  {
+    "id": 5,
+    "categoria": "Alimentos",
+    "nombre": "Frijoles negros",
+    "descripcion": "Frijoles seleccionados, listos para cocinar.",
+    "precio": 32,
+    "icono": "🥣",
+    "imagen": "source/imagenes/frijoles-negros.png"
+  },
+  {
+    "id": 6,
+    "categoria": "Alimentos",
+    "nombre": "Aceite vegetal",
+    "descripcion": "Aceite de cocina 1L, ideal para freír y cocinar.",
+    "precio": 55,
+    "icono": "🫗",
+    "imagen": "source/imagenes/aceite-vegetal.png"
+  },
+  {
+    "id": 7,
+    "categoria": "Alimentos",
+    "nombre": "Agua embotellada 1.5L",
+    "descripcion": "Agua purificada en botella de 1.5 litros.",
+    "precio": 22,
+    "icono": "💧",
+    "imagen": "source/imagenes/agua-embotellada.png"
+  },
+  {
+    "id": 8,
+    "categoria": "Alimentos",
+    "nombre": "Refresco de cola 2L",
+    "descripcion": "Bebida gaseosa sabor cola en presentación de 2 litros.",
+    "precio": 35,
+    "icono": "🥤",
+    "imagen": "source/imagenes/refresco-cola.png"
+  },
+  {
+    "id": 9,
+    "categoria": "Alimentos",
+    "nombre": "Jugo de naranja 1L",
+    "descripcion": "Jugo 100% naranja sin azúcar añadida.",
+    "precio": 42,
+    "icono": "🧃",
+    "imagen": "source/imagenes/jugo-naranja.png"
+  },
+  {
+    "id": 10,
+    "categoria": "Alimentos",
+    "nombre": "Café molido 500g",
+    "descripcion": "Café tostado y molido para cafetera.",
+    "precio": 95,
+    "icono": "☕",
+    "imagen": "source/imagenes/cafe-molido.png"
+  },
+  {
+    "id": 11,
+    "categoria": "Alimentos",
+    "nombre": "Té verde 20 sobres",
+    "descripcion": "Infusiones de té verde en caja con 20 sobres.",
+    "precio": 48,
+    "icono": "🍵",
+    "imagen": "source/imagenes/te-verde.png"
+  },
+  {
+    "id": 12,
+    "categoria": "Limpieza",
+    "nombre": "Escoba",
+    "descripcion": "Escoba de cerdas sintéticas para interiores.",
+    "precio": 60,
+    "icono": "🧹",
+    "imagen": "source/imagenes/escoba.png"
+  },
+  {
+    "id": 13,
+    "categoria": "Limpieza",
+    "nombre": "Trapeador",
+    "descripcion": "Trapeador microfibra con mango metálico.",
+    "precio": 85,
+    "icono": "🪣",
+    "imagen": "source/imagenes/trapeador.png"
+  },
+  {
+    "id": 14,
+    "categoria": "Limpieza",
+    "nombre": "Cepillo multiusos",
+    "descripcion": "Cepillo de mano para superficies difíciles.",
+    "precio": 30,
+    "icono": "🧽",
+    "imagen": "source/imagenes/cepillo.png"
+  },
+  {
+    "id": 15,
+    "categoria": "Limpieza",
+    "nombre": "Guantes de limpieza",
+    "descripcion": "Guantes de látex talla M para limpieza general.",
+    "precio": 25,
+    "icono": "🧤",
+    "imagen": "source/imagenes/guantes.png"
+  },
+  {
+    "id": 16,
+    "categoria": "Limpieza",
+    "nombre": "Esponjas para cocina (pack 3)",
+    "descripcion": "Esponjas abrasivas para trastes.",
+    "precio": 18,
+    "icono": "🫧",
+    "imagen": "source/imagenes/esponjas.png"
+  },
+  {
+    "id": 17,
+    "categoria": "Limpieza",
+    "nombre": "Cubeta 10L",
+    "descripcion": "Cubeta plástica de 10 litros con asa.",
+    "precio": 55,
+    "icono": "🪣",
+    "imagen": "source/imagenes/cubeta.png"
+  }
+]

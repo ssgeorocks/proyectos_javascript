@@ -53,6 +53,53 @@ header p {
   position: relative;
 }
 
+.carrito-menu {
+  position: absolute;
+  top: 36px;         /* debajo del icono */
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  padding: 0.5rem;
+  min-width: 180px;
+  z-index: 10;
+
+  /* transición vertical */
+  overflow: hidden;             /* necesario para max-height */
+  max-height: 0;                /* colapsado */
+  opacity: 0;
+  transform: translateY(-8px);  /* se siente que viene de arriba */
+  pointer-events: none;
+
+  transition:
+    max-height 220ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.carrito-menu.open {
+  max-height: 300px;   
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.carrito-menu button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+}
+
+.carrito-menu button:hover {
+  background-color: #f0fdfa;
+}
+
 #contador {
   position: absolute;
   top: -8px;            /* ajusta según tu diseño */
@@ -138,32 +185,263 @@ main h2 {
   cursor: default;
 }
 
+.products_section .products_hint {
+  margin-bottom: 32px; /* ajusta el valor */
+}
 
 .products_section ul {
   list-style: none;
-  margin-top: 1rem;
-  padding-left: 1rem;
-  margin-bottom: 40px;
-  display: none;
-}
-
-.products_section ul.active {
-  display: block;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .products_section li {
-  margin: 0.5rem 0;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
 .products_section li:hover {
-  background-color: #cceae8;
-  transform: scale(1.02);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
+
+.product-card {
+  display: grid;
+  grid-template-columns: 96px 1fr;   /* thumb + info */
+  gap: 12px;
+  align-items: start;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  cursor: pointer;
+}
+
+.product-card.clicked {
+  transform: scale(1.03);
+  background: #eef2ff;  
+  border-color: #c7d2fe;  
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25); /* glow azulado */
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.product-card.pulse {
+  animation: pulse-grow 220ms ease-out;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.product-thumb {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.product-thumb.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;         /* tamaño del emoji/icono */
+  color: #475569;
+}
+
+.product-info {
+  display: grid;
+  gap: 6px;
+}
+
+.product-name {
+  font-weight: 700;
+}
+
+.product-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.product-price {
+  color: #0f766e;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .products_section ul {
+    grid-template-columns: 1fr;
+  }
+  .product-card {
+    grid-template-columns: 80px 1fr;
+  }
+  .product-thumb {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+/*----------- Baarra lateral de carrito ----------*/
+
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 360px;
+  max-width: 90vw;
+  background: #ffffff;
+  box-shadow: -6px 0 18px rgba(0,0,0,0.12);
+  border-left: 1px solid #e5e7eb;
+  transform: translateX(100%);       /* oculto fuera de la pantalla */
+  transition: transform 260ms ease;  /* animación de deslizamiento */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-panel.open {
+  transform: translateX(0);          /* visible */
+}
+
+.cart-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cart-panel__close {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-panel__content {
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.cart-panel__content label {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-weight: 600;
+}
+
+.cart-panel__content input {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.4rem;
+  font-weight: 400;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto; 
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 0;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.cart-item-remove {
+  background: transparent;
+  color: #ef4444;          /* rojo */
+  border: 1px solid #fecaca;
+  border-radius: .4rem;
+  padding: .25rem .5rem;
+  cursor: pointer;
+  font-size: .50rem;
+}
+
+.cart-item-remove:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.cart-item .name {
+  font-weight: 600;
+}
+.cart-item .price {
+  color: #0f766e;
+}
+
+.cart-panel__footer {
+  border-top: 1px solid #f1f5f9;
+  padding: 1rem;
+}
+
+.cart-total {
+  margin-bottom: .75rem;
+  font-size: 1.05rem;
+}
+
+.btn-confirm {
+  width: 100%;
+  padding: .7rem 1rem;
+  background: #2563eb;        /* azul */
+  color: #fff;
+  border: none;
+  border-radius: .5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-confirm:hover {
+  background: #1d4ed8;
+}
+
+.btn-confirm.disabled {
+  background: #cbd5e1;          
+  color: #ffffff;
+  cursor: not-allowed;
+  pointer-events: none;         
+}
+
+.btn-confirm.disabled {
+  background: #cbd5e1;
+  color: #ffffff;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Backdrop para oscurecer el fondo */
+.cart-panel-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+  z-index: 900;
+}
+.cart-panel-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ---------- Pie de página ---------- */
 footer {
